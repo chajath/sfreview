@@ -1,0 +1,16 @@
+{
+  "name": "suspension-of-disbelief",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "jade": "*",
+    "coffee-script": "*",
+    "stylus": "*"
+  },
+  "repository": "",
+  "author": "In-Ho Yi"
+}

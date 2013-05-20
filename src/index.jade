@@ -1,0 +1,50 @@
+!!!5
+
+html
+  head
+    meta(name="viewport",content="width=device-width, initial-scale=1.0")
+    meta(property="fb:admins",content="chajath")
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js')
+    link(href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css',rel='stylesheet')
+    link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css", rel="stylesheet")
+    link(href='style.css',rel='stylesheet')
+    script(src='script.js')
+    script(src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js')
+  body
+    #fb-root
+    script
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    .container
+      .row.hero-unit
+        .span12
+          h1 Suspension of Disbelief
+          h2 불신의 유예
+          p 공상과학 감상 / 비평 웹진
+      .row
+        .span3
+          ul.nav.nav-list
+            li
+              a(href='#') 전체
+            li.nav-header 작품별
+            li 
+              a(href='#startrek') 스타트랙
+            li 
+              a(href='#fringe') 프린지
+            li
+              a(href='#revolution') 레볼루션
+            li.nav-header 연대별
+            li
+              a(href='#classical') 고전 / 초기근대
+              a(href='#mid20') 60~80년대
+              a(href='#contemporary') 현대
+        .span9
+          &nbsp;
+      .row
+        .span12
+          .fb-comments(data-href="http://blip.asia",data-num-posts="5")
