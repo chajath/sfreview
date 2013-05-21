@@ -1,5 +1,5 @@
 COFFEEC=node_modules/coffee-script/bin/coffee
-COFFEEFLAGS=-b -o out
+COFFEEFLAGS=-b -p
 JADEC=node_modules/jade/bin/jade
 JADEFLAGS=-o out
 STYLC=node_modules/stylus/bin/stylus
@@ -7,16 +7,22 @@ STYLFLAGS=-o out
 COFFEESRC=$(wildcard src/*.coffee)
 JADESRC= $(wildcard src/*.jade)
 STYLSRC=$(wildcard src/*.styl)
+ARTICLESRC=$(wildcard src/article/*.jade)
 
-all: $(patsubst %.jade,%.html,$(JADESRC)) $(patsubst %.coffee,%.js,$(COFFEESRC)) $(patsubst %.styl,%.css,$(STYLSRC)) includes
+all: $(patsubst src/%.jade,out/%.html,$(JADESRC)) $(patsubst src/%.coffee,out/%.js,$(COFFEESRC)) $(patsubst src/%.styl,out/%.css,$(STYLSRC)) article includes
 
-%.html: %.jade
+article: $(patsubst src/article/%.jade,out/article/%.html,$(ARTICLESRC))
+
+out/%.html: src/%.jade
 	$(JADEC) $(JADEFLAGS) $<
 
-%.js: %.coffee
-	$(COFFEEC) $(COFFEEFLAGS) $<
+out/article/%.html: src/article/%.jade
+	$(JADEC) $(JADEFLAGS) $<
 
-%.css: %.styl
+out/%.js: src/%.coffee
+	$(COFFEEC) $(COFFEEFLAGS) $< > $@
+
+out/%.css: src/%.styl
 	$(STYLC) $(STYLFLAGS) $<
 
 includes:

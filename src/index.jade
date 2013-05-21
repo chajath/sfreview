@@ -1,55 +1,15 @@
-!!!5
+extends template/layout
 
-html
-  head
-    meta(charset="utf-8")
-    meta(name="viewport",content="width=device-width, initial-scale=1.0")
-    meta(property="fb:admins",content="chajath")
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js')
-    link(href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css',rel='stylesheet')
-    link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css", rel="stylesheet")
-    link(href='style.css',rel='stylesheet')
-    script(src='script.js')
-    script(src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js')
-  body
-    script(type="text/javascript")
-      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = 'sfreview'; // required: replace example with your forum shortname
-
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    .container
-      .row.hero-unit
-        .span12
-          h1 Suspension of Disbelief
-          h2 불신의 유예
-          p 공상과학 감상 / 비평 웹진
-      .row
-        .span3
-          ul.nav.nav-list
-            li
-              a(href='#') 전체
-            li.nav-header 작품별
-            li 
-              a(href='#startrek') 스타트랙
-            li 
-              a(href='#fringe') 프린지
-            li
-              a(href='#revolution') 레볼루션
-            li.nav-header 연대별
-            li
-              a(href='#classical') 고전 / 초기근대
-              a(href='#mid20') 60~80년대
-              a(href='#contemporary') 현대
-        .span9
-          &nbsp;
-      .row
-        .span12
-          // .fb-comments(data-href="http://blip.asia/sfreview/",data-num-posts="5")
-          #disqus_thread
-          a.dsq-brlink(href="http://disqus.com") comments powered by 
-            span.logo-disqus Disqus
+block title
+  처음 화면
+block content
+  #pageid front
+  &nbsp;
+  .article.well.well-small
+    a(href='machine-sentience.html')
+      h3 기계는 지각이 있는 존재인가?
+    p 고대부터 인간을 괴롭히는 딜레마. 과연 지각이 있는 존재란 무엇이고 인간의 창조물이 그 범주에 포함될 수 있는가?
+  .article.well.well-small
+    h3 프린지 레트로 오프닝
+  .article.well.well-small
+    h3 J.J. Abrams 의 스타트랙
